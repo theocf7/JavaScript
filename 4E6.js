@@ -30,10 +30,10 @@ var Distance = function (x1, y1, z1, x2, y2, z2) {
 		try {
 			if (arguments.length === 6 || arguments.length === 4) {
 				if (arguments.length === 4) {
-					return Math.sqrt(square(x1 - z1) + square(y1 - x2));
+					return Math.sqrt(square(z1 - x1) + square(x2 - y1));
 				}
 				else {
-					return Math.sqrt(square(x1 - x2) + square(y1 - y2) + square(z1 - z2));
+					return Math.sqrt(square(x2 - x1) + square(y2 - y1) + square(z2 - z1));
 				}
 			}
 			else {
