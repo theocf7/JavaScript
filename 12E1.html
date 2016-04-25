@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>12E1</title>
+</head>
+<body>
+<style type="text/css">
+	
+	div{
+		height: 100px;
+		width: 100px;
+		border: 2px solid green;
+		text-align: center;
+		
+	}
+</style>
+
+<h1>Exercise 1 Chapter 12</h1>
+
+<div  id="a" class="square" style="display:inline-block" val="something important"> I'm a square </div>
+<h2>These are my properties:</h2>
+<ul id="props"></ul>
+<script type="text/javascript">
+function printAttr(domElem,attributes){
+		prp = document.getElementById("props");
+		for(var i=0; i<attributes.length; i++){
+			var li = document.createElement("li");
+			li.appendChild(
+				document.createTextNode(
+					domElem.getAttribute(attributes[i]))
+				);
+				prp.appendChild(li);
+		}
+	}
+
+	var elm = document.getElementById("a");
+	printAttr(elm,['id','class','style','val','none']);
+</script>
+</body>
+</html>

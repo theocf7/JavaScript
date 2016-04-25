@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>13E2</title>
+</head>
+<body>
+<style type="text/css">
+	div{
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+if(document.addEventListener){
+	this.addEvent = function(elem, type, fn){
+		elem.addEventListener(type,fn,false);
+		return fn;
+	}
+	this.removeEvent = function(elem, type, fn){
+		elem.removeEventListener(type,fn,false);
+	}
+	}
+	addEvent(window,"load",function(){
+		(function(){
+			var clicked = 0;
+			var button = document.getElementById("click");
+			var loading = document.getElementById("loading");
+			addEvent(button,"click",function handler(e){
+				clicked++;
+				loading.value = clicked;
+				if(clicked === 3)
+					removeEvent(button,"click",handler);
+			});
+		})();
+		})
+</script>
+<h1>Exercise 2 Chapter 13</h1>
+<div>
+<meter value="0" min="0" max="3" id="loading"></meter>
+</div>
+<div>
+<button id="click" type="button">Click me!</button>
+</div>
+</body>
+</html>
